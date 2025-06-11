@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>US Drought Monitor GeoJSON Slider</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    #map {
+      height: 90vh;
+    }
+    #controls {
+      text-align: center;
+      padding: 10px;
+    }
+    input[type="range"] {
+      -webkit-appearance: none;
+      width: 80%;
+      height: 6px;
+      background: #ddd;
+      border-radius: 3px;
+      margin: 10px 0;
+      outline: none;
+    }
+    /* Chrome, Safari, Edge track */
+    input[type="range"]::-webkit-slider-runnable-track {
+      height: 6px;
+      background: #ddd;
+      border-radius: 3px;
+    }
+    /* Firefox track */
+    input[type="range"]::-moz-range-track {
+      height: 6px;
+      background: #ddd;
+      border-radius: 3px;
+    }
+    /* Chrome, Safari, Edge thumb */
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      background: #337ab7;
+      border-radius: 50%;
+      cursor: pointer;
+      margin-top: -7px; /* center thumb vertically */
+      border: 2px solid #fff;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+      transition: background 0.3s ease;
+    }
+    input[type="range"]:hover::-webkit-slider-thumb {
+      background: #1a5276;
+    }
+    /* Firefox thumb */
+    input[type="range"]::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      background: #337ab7;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid #fff;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+      transition: background 0.3s ease;
+    }
+    input[type="range"]:hover::-moz-range-thumb {
+      background: #1a5276;
+    }
+    /* Remove fill progress on Firefox */
+    input[type="range"]::-moz-range-progress {
+      background: transparent;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <div id="controls">
+    <label for="slider">Select Week:</label><br />
+    <input type="range" id="slider" min="0" max="0" value="0" />
+    <div id="date-display"></div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
